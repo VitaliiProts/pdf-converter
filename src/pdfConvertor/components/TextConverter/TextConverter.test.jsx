@@ -53,10 +53,8 @@ describe('Converter', () => {
   })
 
   it('successfully converts text to pdf and updates history', async () => {
-    // Оновлюємо mockPdfData для відображення реальної Base64 строки
     const mockPdfData = 'data:application/pdf;base64,PDF_CONTENT'
 
-    // Мокаємо fetch, щоб повернути реальний Blob
     global.fetch = jest.fn().mockResolvedValueOnce({
       ok: true,
       blob: () =>
@@ -85,7 +83,6 @@ describe('Converter', () => {
     fireEvent.click(button)
 
     await waitFor(() => {
-      // Перевірка, що setPdfData був викликаний з PDF контентом
       expect(mockSetPdfData).toHaveBeenCalledWith(
         expect.stringContaining('data:application/pdf;base64,'),
       )

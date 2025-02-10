@@ -25,7 +25,6 @@ describe('History', () => {
       <HistoryList history={history} onHistoryClick={mockOnHistoryClick} />,
     )
 
-    // Перевіряємо, чи рендеряться правильні елементи
     history.forEach((entry) => {
       expect(screen.getByText(entry.text.slice(0, 60))).toBeInTheDocument()
     })
@@ -36,11 +35,9 @@ describe('History', () => {
       <HistoryList history={history} onHistoryClick={mockOnHistoryClick} />,
     )
 
-    // Клікаємо на перший елемент історії
     const historyItem = screen.getByText(history[0].text.slice(0, 60))
     fireEvent.click(historyItem)
 
-    // Перевіряємо, чи викликалась функція з правильним аргументом
     expect(mockOnHistoryClick).toHaveBeenCalledWith(history[0])
     expect(mockOnHistoryClick).toHaveBeenCalledTimes(1)
   })

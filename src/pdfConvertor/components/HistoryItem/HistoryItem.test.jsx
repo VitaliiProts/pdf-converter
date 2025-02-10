@@ -14,23 +14,19 @@ describe('HistoryItem', () => {
   })
 
   it('renders the text of the entry correctly', () => {
-    // Перевіряємо, чи правильно відображається текст
     expect(screen.getByText(entry.text.slice(0, 60))).toBeInTheDocument()
   })
 
   it('renders the correct date for the entry', () => {
-    // Перевіряємо, чи правильно відображається дата
     expect(
       screen.getByText(new Date(entry.id).toLocaleDateString()),
     ).toBeInTheDocument()
   })
 
   it('calls onClick when the button is clicked', () => {
-    // Імітуємо клік по кнопці
     const button = screen.getByText(entry.text.slice(0, 60))
     fireEvent.click(button)
 
-    // Перевіряємо, чи викликається onClick
     expect(mockOnClick).toHaveBeenCalledTimes(1)
   })
 })

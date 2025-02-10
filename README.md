@@ -1,8 +1,10 @@
-# *PDF Converter*
-*Application description:*
+# _PDF Converter_
+
+_Application description:_
 The PDF Converter is a tool that allows users to easily convert text into PDF documents.
 
 ## Table of Contents
+
 <ul>
 <li><a href="#sequence-diagram">Sequence Diagram</a></li>
 <li><a href="#endpoints">Endpoints</a></li>
@@ -12,6 +14,7 @@ The PDF Converter is a tool that allows users to easily convert text into PDF do
 </ul>
 
 ## <h2 id="sequence-diagram">Sequence Diagram</h2>
+
 ```mermaid
 sequenceDiagram
     Page->>+Gateway: POST /create-pdf?apiKey=${apiKey}
@@ -46,12 +49,14 @@ sequenceDiagram
 yarn
 
 # serve with hot reload
+
 yarn start
-```
+
+````
 
 
 <h2 id="testing">Testing</h2>
 ```bash
 # run unit tests as in CI
 yarn test
-```
+````
